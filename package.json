@@ -10,7 +10,8 @@
     "test:generate-with-ai": "tsx --env-file=.env src/scripts/test-generate-with-ai.ts",
     "dev": "tsx watch --env-file=.env -r tsconfig-paths/register src/index.ts",
     "build": "tsup src/index.ts --out-dir dist --clean",
-    "start": "node dist/index.js"
+    "start": "node dist/index.js",
+    "format": "prettier --write ."
   },
   "keywords": [],
   "author": "",

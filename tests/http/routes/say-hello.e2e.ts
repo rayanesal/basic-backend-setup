@@ -13,7 +13,10 @@ describe("/say-hello route", () => {
   });
 
   it("should return 201 and expected body", async () => {
-    const response = await request(app.server).post("/say-hello").send({name: "Mocked User"}).expect(201);
+    const response = await request(app.server)
+      .post("/say-hello")
+      .send({ name: "Mocked User" })
+      .expect(201);
 
     expect(response.body).toEqual({
       message: "Hello Mocked User",
@@ -21,7 +24,10 @@ describe("/say-hello route", () => {
   });
 
   it("should return 400 when sending invalid types", async () => {
-    const response = await request(app.server).post("/say-hello").send({  name: 123}).expect(400);
+    const response = await request(app.server)
+      .post("/say-hello")
+      .send({ name: 123 })
+      .expect(400);
 
     expect(response.body).toHaveProperty("message");
     expect(response.body).toHaveProperty("error", "Bad Request");
