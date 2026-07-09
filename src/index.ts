@@ -1,1 +1,1 @@
-import "#/http/server";
+import "#/server/server.js";

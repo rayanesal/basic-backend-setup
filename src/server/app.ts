@@ -8,8 +8,8 @@ import {
   ZodTypeProvider,
 } from "fastify-type-provider-zod";
 
-import { getHelloWorld } from "./routes/get-hello-world.js";
-import { sayHello } from "./routes/say-hello.js";
+import { getHelloWorld } from "../core/get-hello-world.js";
+import { sayHello } from "../core/say-hello.js";
 
 export const app = fastify().withTypeProvider<ZodTypeProvider>();
 
@@ -22,6 +22,15 @@ app.register(fastifySwagger, {
       title: "Basic Backend Setup",
       description: "",
       version: "1.0.0",
+    },
+    components: {
+      securitySchemes: {
+        bearerAuth: {
+          type: "http",
+          scheme: "bearer",
+          bearerFormat: "JWT",
+        },
+      },
     },
   },
   transform: jsonSchemaTransform,

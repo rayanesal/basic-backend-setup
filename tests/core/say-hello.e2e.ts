@@ -1,7 +1,7 @@
 import request from "supertest";
 import { afterAll, beforeAll, describe, expect, it } from "vitest";
 
-import { app } from "#/http/app.js";
+import { app } from "#/server/app.js";
 
 describe("/say-hello route", () => {
   beforeAll(async () => {

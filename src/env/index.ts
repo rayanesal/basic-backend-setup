@@ -5,7 +5,10 @@ const envSchema = z.object({
     .union([z.literal("dev"), z.literal("production"), z.literal("test")])
     .default("dev"),
   PORT: z.coerce.number().default(3333),
-  GEMINI_API_KEY: z.string(),
+  MONGODB_URI: z
+    .string()
+    .default("mongodb://localhost:27017/basic-backend-setup"),
+  JWT_PRIVATE_KEY: z.string().default("secret"),
 });
 
 const _env = envSchema.safeParse(process.env);
