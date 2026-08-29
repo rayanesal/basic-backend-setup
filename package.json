@@ -41,7 +41,7 @@
   },
   "dependencies": {
     "@fastify/swagger": "^8.15.0",
-    "@fastify/swagger-ui": "^4.1.0",
+    "@fastify/swagger-ui": "^4.2.0",
     "@google/generative-ai": "^0.24.1",
     "fastify": "^4.28.1",
     "fastify-plugin": "^4.5.1",
